@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #444;
+            text-align: center;
+        }
+
+        .card {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 90%;
+            width: 350px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ff6f61;
+            text-transform: capitalize;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flower {
+            width: 40px;
+            animation: bloom 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .music {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        button:hover {
+            background-color: #ff8f7f;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+
+            .flower {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>I'm Sorry ❤️</h1>
+        <p>I never meant to hurt you. You are incredibly special to me, and I hope you can forgive me.</p>
+
+        <div class="flowers">
+            <picture>
+                <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f498/512.webp" type="image/webp">
+                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f498/512.gif" alt="💘" width="32" height="32">
+            </picture>
+            <picture>
+                <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f_200d_1fa79/512.webp" type="image/webp">
+                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f_200d_1fa79/512.gif" alt="❤" width="32" height="32">
+            </picture>
+            <picture>
+                <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f979/512.webp" type="image/webp">
+                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f979/512.gif" alt="🥹" width="32" height="32">
+            </picture>
+        </div>
+        <audio id="audio" controls autoplay loop hidden>
+            <source src="Stay(PagalNew.Com.Se).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="music">
+            Playing "Stay" by Justin Bieber
+            <button id="muteButton">Mute</button>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const muteButton = document.getElementById('muteButton');
+
+        muteButton.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+            }
+        });
+    </script>
+</body>
+</html>
